@@ -1,13 +1,13 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import os
 import argparse
 from mastodon import Mastodon
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description = 'A dead simple Mastodon bot that posts (toots) a list of phrases from a text file.')
 parser.add_argument('file', help = 'Path to the list of phrases to toot. Will toot in line order. Required.')
-parser.add_argument('--user', default = './usercred.txt', help = 'Path to the file containing your client ID and client secret. (default: %(default))')
-parser.add_argument('--client', default = './clientcred.txt', help = 'Path to the file containing your access token. (default: %(default))')
+parser.add_argument('--user', default = './usercred.txt', help = 'Path to the file containing your client ID and client secret. (default: %(default)s)')
+parser.add_argument('--client', default = './clientcred.txt', help = 'Path to the file containing your access token. (default: %(default)s)')
 parser.add_argument('--toot', help = 'Toot a single phrase.')
 parser.add_argument('--debug', action = 'store_true', required = False, help = 'Outputs debug info to stdout. Optional')
 
